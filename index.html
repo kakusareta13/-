@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="author" content="Jazz">
+  <meta name="description" content="справочник энергетика">
+  <meta name="keywords" content="энергетикаи умуми, энергетика, душанбе, кулоб, барки точик">
+    <title>Энергетик | Справочник</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Шапка с градиентом -->
+    <header>
+        <div class="header-content">
+            <h1 id="title">⚡ Справочник энергетика</h1>
+            <p id="subtitle">Главные формулы и таблицы для студентов</p>
+            
+            <!-- Кнопки языков -->
+            <div class="lang-buttons">
+                <button class="lang-btn active" data-lang="ru">🇷🇺 Русский</button>
+                <button class="lang-btn" data-lang="tj">🇹🇯 Тоҷикӣ</button>
+                <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Навигация -->
+    <nav>
+        <a href="#laws" id="nav-laws"><i class="fas fa-bolt"></i> Законы</a>
+        <a href="#kirchhoff" id="nav-kirchhoff"><i class="fas fa-project-diagram"></i> Кирхгоф</a>
+        <a href="#resistors" id="nav-resistors"><i class="fas fa-chart-line"></i> Резисторы</a>
+        <a href="#cable" id="nav-cable"><i class="fas fa-grip-lines"></i> Кабели</a>
+    </nav>
+
+    <!-- Основной контент -->
+    <main>
+        <!-- Секция 1: Законы Ома -->
+        <section id="laws" class="section">
+            <h2 id="laws-title"><span class="highlight">01.</span> Законы постоянного тока</h2>
+            <div class="cards-grid">
+                <div class="card glass">
+                    <i class="fas fa-circle-notch card-icon"></i>
+                    <h3 id="law1-title">Закон Ома (участок)</h3>
+                    <div class="formula">I = U / R</div>
+                    <p id="law1-text">I — ток (А), U — напряжение (В), R — сопротивление (Ом)</p>
+                </div>
+                <div class="card glass">
+                    <i class="fas fa-battery-full card-icon"></i>
+                    <h3 id="law2-title">Закон Ома (полный)</h3>
+                    <div class="formula">I = E / (R + r)</div>
+                    <p id="law2-text">r — внутреннее сопротивление источника</p>
+                </div>
+                <div class="card glass">
+                    <i class="fas fa-chart-bar card-icon"></i>
+                    <h3 id="law3-title">Мощность</h3>
+                    <div class="formula">P = U × I</div>
+                    <p id="law3-text">P — мощность (Вт)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция 2: Законы Кирхгофа -->
+        <section id="kirchhoff" class="section">
+            <h2 id="kirchhoff-title"><span class="highlight">02.</span> Законы Кирхгофа</h2>
+            <div class="cards-grid">
+                <div class="card glass">
+                    <i class="fas fa-code-branch card-icon"></i>
+                    <h3 id="kirchhoff1-title">Первый закон</h3>
+                    <p id="kirchhoff1-text">Сумма токов в узле = 0</p>
+                    <div class="example" id="kirchhoff1-example">I₁ + I₂ - I₃ = 0</div>
+                </div>
+                <div class="card glass">
+                    <i class="fas fa-sync-alt card-icon"></i>
+                    <h3 id="kirchhoff2-title">Второй закон</h3>
+                    <p id="kirchhoff2-text">Сумма падений напряжения = сумме ЭДС</p>
+                    <div class="example" id="kirchhoff2-example">∑IR = ∑E</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция 3: Резисторы -->
+        <section id="resistors" class="section">
+            <h2 id="resistors-title"><span class="highlight">03.</span> Цветовая маркировка резисторов</h2>
+            <div class="table-container glass">
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="table-color">Цвет</th>
+                            <th id="table-mult">Множитель</th>
+                            <th id="table-tolerance">Допуск</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>⚫ Черный</td><td>×1</td><td>-</td></tr>
+                        <tr><td>🟤 Коричневый</td><td>×10</td><td>±1%</td></tr>
+                        <tr><td>🔴 Красный</td><td>×100</td><td>±2%</td></tr>
+                        <tr><td>🟡 Золотой</td><td>×0.1</td><td>±5%</td></tr>
+                        <tr><td>⚪ Серебряный</td><td>×0.01</td><td>±10%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="note" id="resistor-example">💡 Пример: Коричневый-Черный-Красный = 1000 Ом (1 кОм)</p>
+        </section>
+
+        <!-- Секция 4: Кабели -->
+        <section id="cable" class="section">
+            <h2 id="cable-title"><span class="highlight">04.</span> Сечение медных кабелей</h2>
+            <div class="table-container glass">
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="cable-section">Сечение (мм²)</th>
+                            <th id="cable-current">Ток (А)</th>
+                            <th id="cable-power">Мощность (кВт)</th>
+                            <th id="cable-usage">Применение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1.5</td><td>16</td><td>3.5</td><td id="lighting">💡 Освещение</td></tr>
+                        <tr><td>2.5</td><td>25</td><td>5.5</td><td id="sockets">🔌 Розетки</td></tr>
+                        <tr><td>4.0</td><td>35</td><td>7.7</td><td id="conditioners">❄️ Кондиционеры</td></tr>
+                        <tr><td>6.0</td><td>42</td><td>9.2</td><td id="stoves">🔥 Плиты</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <p id="footer">👨‍💻 Автор: Ибрагимов Мухаммаджасур | 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
